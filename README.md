@@ -1,8 +1,8 @@
 # adcd-proj
 
-# edamam
+# nutrition api
 
-https://www.edamam.com/
+https://api-ninjas.com/api/nutrition
 
 - this api can return nutrition facts based on an input of ingredients
 
