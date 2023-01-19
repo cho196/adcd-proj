@@ -17,7 +17,6 @@ export default function Home() {
     .then((res) => {
       console.log(res.data);
     });
-  nutrition;
 
   var query = "1lb brisket and fries";
   axios({
@@ -27,9 +26,6 @@ export default function Home() {
     contentType: "application/json",
     success: function (res) {
       console.log(res.data);
-    },
-    error: function ajaxError(jqXHR) {
-      console.error("Error: ", jqXHR.responseText);
     },
   });
 
