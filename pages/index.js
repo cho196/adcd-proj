@@ -19,16 +19,16 @@ export default function Home() {
       console.log(res.data);
     });
 
-  var query = "1lb brisket and fries";
-  axios({
-    method: "GET",
-    url: "https://api.api-ninjas.com/v1/nutrition?query=" + query,
-    headers: { "X-Api-Key": "PN+egjNuV73ERprjvn/T6Q==a3sRvM0NzFqd8Wr4" },
-    contentType: "application/json",
-    success: function (res) {
-      console.log(res.data);
-    },
-  });
+  // var query = "1lb brisket and fries";
+  // axios({
+  //   method: "GET",
+  //   url: "https://api.api-ninjas.com/v1/nutrition?query=" + query,
+  //   headers: { "X-Api-Key": "PN+egjNuV73ERprjvn/T6Q==a3sRvM0NzFqd8Wr4" },
+  //   contentType: "application/json",
+  //   success: function (res) {
+  //     console.log(res.data);
+  //   },
+  // });
 
   return (
     <>
