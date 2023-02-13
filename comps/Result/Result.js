@@ -5,6 +5,9 @@ const Cont = styled.div`
   border: 1px solid black;
   min-height: 100px;
   width: 500px;
+  :hover {
+    background-color: red;
+  }
 `;
 const Img = styled.img`
   height: 100px;
