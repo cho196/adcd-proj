@@ -6,13 +6,16 @@ const Cont = styled.div`
   min-height: 100px;
   width: 500px;
 `;
+const Img = styled.img`
+  height: 100px;
+  width: 100px;
+`;
 
-export default function Result() {
+export default function Result({ src = "", title = "", handleClick = "" }) {
   return (
-    <Cont>
-      <img src="/"></img>
-      <h2>Recipe Title</h2>
-      <p>recipe description</p>
+    <Cont onClick={handleClick}>
+      <h1>{title}</h1>
+      <Img src={src}></Img>
     </Cont>
   );
 }
