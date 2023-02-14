@@ -14,11 +14,18 @@ const Img = styled.img`
   width: 100px;
 `;
 
-export default function Result({ src = "", title = "", handleClick = "" }) {
+export default function Result({
+  src = "",
+  title = "",
+  handleClick = "",
+  ptext = "",
+}) {
   return (
     <Cont onClick={handleClick}>
       <h1>{title}</h1>
       <Img src={src}></Img>
+      <h2>Sugar</h2>
+      <p ptext={ptext}></p>
     </Cont>
   );
 }

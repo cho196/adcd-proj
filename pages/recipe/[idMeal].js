@@ -15,7 +15,7 @@ export default function RecipePage() {
       .then((response) => {
         console.clear();
         setRecipe(response.data.meals[0]);
-        console.log(recipe);
+        // console.log(recipe);
         for (let i = 0; i < 20; i++) {
           if (response.data.meals[0][`strIngredient${i}`] !== "") {
             ingredientsObj[response.data.meals[0][`strMeasure${i}`]] =

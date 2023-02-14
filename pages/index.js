@@ -11,17 +11,41 @@ export default function Home() {
   const [query, setQuery] = useState();
   const [errorMessage, setErrorMessage] = useState("");
   const [searchResults, setSearchResults] = useState();
-  const [nutritionResults, setNutritionResults] = useState();
+  const [allIds, setAllIds] = useState([]);
+  const allIngredients = [];
+  const ingredientsObj = {};
+  const [ingredientsArray, setIngredientsArray] = useState([]);
   const r = useRouter();
   const searchQuery = (event) => {
+    // get all results
     if (event.key === "Enter") {
       axios
         .get(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${query}`)
         .then((response) => {
           console.clear();
           setSearchResults(response.data.meals);
-          console.log(searchResults);
+          // console.log(response.data);
           setErrorMessage("");
+          // get ingredients of results
+          for (let i = 0; i < response.data.meals.length; i++) {
+            axios
+              .get(
+                `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${searchResults[i].idMeal}`
+              )
+              .then((response) => {
+                for (let k = 0; k < 20; k++) {
+                  console.clear();
+                  if (response.data.meals[0][`strIngredient${k}`] !== "") {
+                    ingredientsObj[response.data.meals[0][`strMeasure${k}`]] =
+                      response.data.meals[0][`strIngredient${k}`];
+                  }
+                  console.log(ingredientsObj);
+                }
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+          }
         })
         .catch((err) => {
           console.log(err);
@@ -29,6 +53,8 @@ export default function Home() {
           setQuery();
           setSearchResults();
         });
+
+      //get nutrition of results
       // axios
       //   .get(`https://api.api-ninjas.com/v1/nutrition?query=${query}`, {
       //     headers: { "X-Api-Key": "PN+egjNuV73ERprjvn/T6Q==a3sRvM0NzFqd8Wr4" },
@@ -66,6 +92,7 @@ export default function Home() {
             handleClick={() => {
               r.push("/recipe/" + searchResult.idMeal);
             }}
+            ptext={allIngredients[index]}
           ></Result>
         ))}
       {/* api-ninja */}
