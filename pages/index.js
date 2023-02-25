@@ -24,28 +24,28 @@ export default function Home() {
         .then((response) => {
           console.clear();
           setSearchResults(response.data.meals);
-          // console.log(response.data);
+          console.log(response.data);
           setErrorMessage("");
           // get ingredients of results
-          for (let i = 0; i < response.data.meals.length; i++) {
-            axios
-              .get(
-                `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${searchResults[i].idMeal}`
-              )
-              .then((response) => {
-                for (let k = 0; k < 20; k++) {
-                  console.clear();
-                  if (response.data.meals[0][`strIngredient${k}`] !== "") {
-                    ingredientsObj[response.data.meals[0][`strMeasure${k}`]] =
-                      response.data.meals[0][`strIngredient${k}`];
-                  }
-                  console.log(ingredientsObj);
-                }
-              })
-              .catch((err) => {
-                console.log(err);
-              });
-          }
+          // for (let i = 0; i < response.data.meals.length; i++) {
+          //   axios
+          //     .get(
+          //       `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${searchResults[i].idMeal}`
+          //     )
+          //     .then((response) => {
+          //       for (let k = 0; k < 20; k++) {
+          //         console.clear();
+          //         if (response.data.meals[0][`strIngredient${k}`] !== "") {
+          //           ingredientsObj[response.data.meals[0][`strMeasure${k}`]] =
+          //             response.data.meals[0][`strIngredient${k}`];
+          //         }
+          //         console.log(ingredientsObj);
+          //       }
+          //     })
+          //     .catch((err) => {
+          //       console.log(err);
+          //     });
+          // }
         })
         .catch((err) => {
           console.log(err);

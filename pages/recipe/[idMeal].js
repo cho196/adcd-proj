@@ -14,6 +14,7 @@ export default function RecipePage() {
       .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
       .then((response) => {
         console.clear();
+        console.log(response.data);
         setRecipe(response.data.meals[0]);
         // console.log(recipe);
         for (let i = 0; i < 20; i++) {

@@ -12,7 +12,7 @@ export default function Recipe({
       <h1>{h1text}</h1>
       <img src={src} />
       <h3>Ingredients</h3>
-      {ingredientList.map((ingredient, index) => {
+      {/* {ingredientList.map((ingredient, index) => {
         if (ingredient !== "undefined") {
           return (
             <div key={index}>
@@ -20,7 +20,7 @@ export default function Recipe({
             </div>
           );
         }
-      })}
+      })} */}
       <h3>Steps</h3>
       <p>{ptext}</p>
     </div>
