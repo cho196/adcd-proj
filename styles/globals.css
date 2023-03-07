@@ -138,14 +138,25 @@ h2 {
 }
 
 .navbar {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px;
+  justify-items: center;
+  flex-direction: row; */
+  width: 100%;
+  padding: 10px 50px;
+  background-color: white;
+}
+
+.navmenu {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 li {
   list-style: none;
+  flex-direction: row;
 }
 
 
