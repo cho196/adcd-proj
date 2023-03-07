@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Button from "../comps/Button/Button";
-import Searchbar from "../comps/Searchbar/Searchbar";
 import { useState } from "react";
 import axios from "axios";
 import Navbar from "../comps/Navbar/Navbar";
@@ -74,6 +73,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
+      <p>Type in an ingredient and click "Enter"</p>
       <input
         value={query}
         onChange={(event) => setQuery(event.target.value)}

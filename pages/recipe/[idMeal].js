@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Recipe from "../../comps/Recipe/Recipe";
 import axios from "axios";
+import NavBar from "../../comps/Navbar/Navbar";
 
 export default function RecipePage() {
   const [recipe, setRecipe] = useState("");
@@ -32,6 +33,7 @@ export default function RecipePage() {
 
   return (
     <>
+      <NavBar />
       <Recipe
         h1text={recipe.strMeal}
         src={recipe.strMealThumb}
