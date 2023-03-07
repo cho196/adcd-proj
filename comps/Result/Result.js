@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 const Cont = styled.div`
-  background-color: blue;
-  border: 1px solid black;
+  background-color: white;
+  border-radius: 25px;
+  border: .5px solid black;
   min-height: 100px;
   width: 500px;
   :hover {
-    background-color: red;
+    background-color: #EC4F41;
   }
 `;
 const Img = styled.img`
