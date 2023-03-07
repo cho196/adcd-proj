@@ -73,7 +73,9 @@ export default function Home() {
       //   });
     }
   };
+
   return (
+
     <div>
 
       <title>Dishcovery</title>
@@ -81,18 +83,21 @@ export default function Home() {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/dc_logo.svg" />
 
-
       <img className="DClogo" src="dc_logo.svg"></img>
       <Navbar />
-      <input
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-        placeholder="Enter an ingredient.."
-        onKeyDown={searchQuery}
-        type="text"
-      ></input>
+      <div className="custom-field">
+        <input id="search-field"
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Enter an ingredient.."
+          onKeyDown={searchQuery}
+          type="text"
+        ></input>
+      </div>
       {/* meal db */}
-      <h1>recipes</h1>
+      <br></br>
+      <br></br>
+      <h2>Recipes to be  <img className="dcvrd" src="dishcovered.svg"></img></h2>
       {searchResults &&
         searchResults.map((searchResult, index) => (
           <Result
@@ -119,6 +124,7 @@ export default function Home() {
         </div>
       )} */}
     </div>
+
 
   );
 }
