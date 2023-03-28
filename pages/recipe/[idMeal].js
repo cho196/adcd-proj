@@ -9,9 +9,10 @@ export default function RecipePage() {
   const [ingredientsArray, setIngredientsArray] = useState([]);
   const [sugar, setSugar] = useState("");
   var sugarArray = [];
-  var pathArray = window.location.pathname.split("/");
-  var idMeal = pathArray[2];
+
   useEffect(() => {
+    var pathArray = window.location.pathname.split("/");
+    var idMeal = pathArray[2];
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
       .then((response) => {
@@ -59,11 +60,6 @@ export default function RecipePage() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setRecipe(idMeal);
-    }
   }, []);
 
   return (
