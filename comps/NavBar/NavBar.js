@@ -6,11 +6,11 @@ export default function NavBar() {
       <nav className="navbar">
         <ul className="navmenu">
           <li className="navitem">
-            <a href="/findrecipes">Find recipes</a>
+            <a href="/">Home</a>
           </li>
 
           <li className="navitem">
-            <a href="/feelinglucky">Feeling lucky?</a>
+            <a href="/feelinglucky">Feeling Lucky?</a>
           </li>
 
           <li className="navitem">
