@@ -60,6 +60,11 @@ export default function RecipePage() {
         console.log(err);
       });
   }, []);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setRecipe(idMeal);
+    }
+  }, []);
 
   return (
     <>
