@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 const Cont = styled.div`
   background-color: white;
-  border-radius: 25px;
-  border: .5px solid black;
+  border-radius: 10px;
+  border: 0.5px solid black;
+  margin: 5px;
   min-height: 100px;
-  width: 500px;
+  width: 400px;
   :hover {
-    background-color: #EC4F41;
+    background-color: #ec4f41;
   }
 `;
 const Img = styled.img`
@@ -25,8 +26,6 @@ export default function Result({
     <Cont onClick={handleClick}>
       <h1>{title}</h1>
       <Img src={src}></Img>
-      <h2>Sugar</h2>
-      <p ptext={ptext}></p>
     </Cont>
   );
 }

@@ -1,0 +1,12 @@
+.cont {
+  width: 800px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.ingredients {
+  padding-bottom: 1rem;
+}
