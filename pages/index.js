@@ -7,10 +7,6 @@ import Result from "../comps/Result/Result";
 import { useRouter } from "next/router";
 import styles from "../styles/Home.module.css";
 
-// const Grid = styled.div`
-
-// `;
-
 export default function Home() {
   const [query, setQuery] = useState();
   const [errorMessage, setErrorMessage] = useState("");
@@ -52,9 +48,10 @@ export default function Home() {
       <div className="custom-field">
         <input
           id="search-field"
+          className={styles.input}
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Enter an ingredient.."
+          placeholder="Enter an ingredient and press enter.."
           onKeyDown={searchQuery}
           type="text"
         ></input>

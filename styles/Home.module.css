@@ -6,6 +6,17 @@
   padding: 6rem;
   min-height: 100vh;
 }
+.content__area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
 
 .description {
   display: inherit;
@@ -70,6 +81,10 @@
   font-size: 0.9rem;
   line-height: 1.5;
   max-width: 30ch;
+}
+
+.input {
+  width: 100%;
 }
 
 .center {

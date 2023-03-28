@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Recipe from "../../comps/Recipe/Recipe";
 import axios from "axios";
 import NavBar from "../../comps/NavBar/NavBar";
+import styles from "../../styles/Recipe.module.css";
 
 export default function RecipePage() {
   const [recipe, setRecipe] = useState("");
@@ -64,14 +65,18 @@ export default function RecipePage() {
 
   return (
     <>
-      <NavBar />
-      <Recipe
-        h1text={recipe.strMeal}
-        src={recipe.strMealThumb}
-        ptext={recipe.strInstructions}
-        ingredientData={ingredientsArray}
-        sugar={sugar}
-      ></Recipe>
+      <div className={styles.cont}>
+        <img className="DClogo" src="../dc_logo.svg"></img>
+        <NavBar />
+
+        <Recipe
+          h1text={recipe.strMeal}
+          src={recipe.strMealThumb}
+          ptext={recipe.strInstructions}
+          ingredientData={ingredientsArray}
+          sugar={sugar}
+        ></Recipe>
+      </div>
     </>
   );
 }
