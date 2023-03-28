@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Button from "../comps/Button/Button";
 import { useState } from "react";
 import axios from "axios";
-import Navbar from "../comps/Navbar/Navbar";
+import Navbar from "../comps/NavBar/NavBar";
 import Result from "../comps/Result/Result";
 import { useRouter } from "next/router";
 import styles from "../styles/Home.module.css";

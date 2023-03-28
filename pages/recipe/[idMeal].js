@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import Recipe from "../../comps/Recipe/Recipe";
 import axios from "axios";
 import NavBar from "../../comps/Navbar/Navbar";
