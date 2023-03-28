@@ -59,7 +59,6 @@ export default function Home() {
           type="text"
         ></input>
       </div>
-      {/* meal db */}
       <br></br>
       <br></br>
       <h2>

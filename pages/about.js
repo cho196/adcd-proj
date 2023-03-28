@@ -7,6 +7,7 @@ export default function About() {
 
       <img className="cherylphoto" src="cherylphoto.jpg"></img>
       <img className="gianphoto" src="gianphoto.jpg"></img>
+      <button>Back</button>
     </div>
   );
 }
