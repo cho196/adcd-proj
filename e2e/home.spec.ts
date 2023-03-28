@@ -22,7 +22,7 @@ test.describe("Header area", () => {
     await page.goto(urlHome);
 
     const linkTag = page.locator('link[rel="icon"]');
-    await expect(linkTag).toHaveAttribute("href", "/favicon.png");
+    await expect(linkTag).toHaveAttribute("href", "/dc_favicon.png");
   });
 });
 

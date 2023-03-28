@@ -10,30 +10,28 @@ export default function About() {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/dc_logo.png" />
 
-
       <img className="DClogo" src="dc_logo.svg"></img>
-
 
       <NavBar />
       <div className="about">
-
         <h1>About Us</h1>
-        <a href="/"><button className="Backbutton">Back</button></a>
+        <a href="/">
+          <button className="Backbutton">Back</button>
+        </a>
 
         <div className="aboutcard">
           <img className="cherylphoto" src="cherylphoto.png"></img>
-          <h1>{data.cheryl.name}</h1>
-          <h2>{data.cheryl.role}</h2>
+          <h2>{data.cheryl.name}</h2>
+          <h3>{data.cheryl.role}</h3>
           <p>{data.cheryl.description}</p>
         </div>
 
         <div className="aboutcard">
           <img className="gianphoto" src="gianphoto.png"></img>
-          <h1>{data.gian.name}</h1>
-          <h2>{data.gian.role}</h2>
+          <h2>{data.gian.name}</h2>
+          <h3>{data.gian.role}</h3>
           <p>{data.gian.description}</p>
         </div>
-
       </div>
     </div>
   );
