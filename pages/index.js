@@ -5,6 +5,11 @@ import axios from "axios";
 import Navbar from "../comps/Navbar/Navbar";
 import Result from "../comps/Result/Result";
 import { useRouter } from "next/router";
+import styles from "../styles/Home.module.css";
+
+// const Grid = styled.div`
+
+// `;
 
 export default function Home() {
   const [query, setQuery] = useState();
@@ -25,26 +30,6 @@ export default function Home() {
           setSearchResults(response.data.meals);
           console.log(response.data);
           setErrorMessage("");
-          // get ingredients of results
-          // for (let i = 0; i < response.data.meals.length; i++) {
-          //   axios
-          //     .get(
-          //       `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${searchResults[i].idMeal}`
-          //     )
-          //     .then((response) => {
-          //       for (let k = 0; k < 20; k++) {
-          //         console.clear();
-          //         if (response.data.meals[0][`strIngredient${k}`] !== "") {
-          //           ingredientsObj[response.data.meals[0][`strMeasure${k}`]] =
-          //             response.data.meals[0][`strIngredient${k}`];
-          //         }
-          //         console.log(ingredientsObj);
-          //       }
-          //     })
-          //     .catch((err) => {
-          //       console.log(err);
-          //     });
-          // }
         })
         .catch((err) => {
           console.log(err);
@@ -52,22 +37,6 @@ export default function Home() {
           setQuery();
           setSearchResults();
         });
-
-      //get nutrition of results
-      // axios
-      //   .get(`https://api.api-ninjas.com/v1/nutrition?query=${query}`, {
-      //     headers: { "X-Api-Key": "PN+egjNuV73ERprjvn/T6Q==a3sRvM0NzFqd8Wr4" },
-      //   })
-      //   .then((response) => {
-      //     setNutritionResults(response.data);
-      //     console.log(nutritionResults);
-      //     setErrorMessage("");
-      //   })
-      //   .catch((err) => {
-      //     console.log(err);
-      //     setErrorMessage("Please enter a different ingredient");
-      //     setNutritionResults();
-      //   });
     }
   };
 
@@ -96,18 +65,20 @@ export default function Home() {
       <h2>
         Recipes to be <img className="dcvrd" src="dishcovered.svg"></img>
       </h2>
-      {searchResults &&
-        searchResults.map((searchResult, index) => (
-          <Result
-            key={index}
-            src={searchResult.strMealThumb}
-            title={searchResult.strMeal}
-            handleClick={() => {
-              r.push("/recipe/" + searchResult.idMeal);
-            }}
-            ptext={allIngredients[index]}
-          ></Result>
-        ))}
+      <div className={styles.content__area}>
+        {searchResults &&
+          searchResults.map((searchResult, index) => (
+            <Result
+              key={index}
+              src={searchResult.strMealThumb}
+              title={searchResult.strMeal}
+              handleClick={() => {
+                r.push("/recipe/" + searchResult.idMeal);
+              }}
+              ptext={allIngredients[index]}
+            ></Result>
+          ))}
+      </div>
       {/* api-ninja */}
       {/* <h1>Sugar</h1>
       {nutritionResults && (
