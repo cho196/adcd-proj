@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Recipe from "../../comps/Recipe/Recipe";
 import axios from "axios";
-import NavBar from "../../comps/Navbar/Navbar";
+import NavBar from "../../comps/NavBar/NavBar";
 
 export default function RecipePage() {
   const [recipe, setRecipe] = useState("");
